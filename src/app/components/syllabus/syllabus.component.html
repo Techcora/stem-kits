@@ -1,0 +1,43 @@
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <!-- Section Title -->
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">
+        Our Curriculum: A Journey Through STEM
+      </h2>
+  
+      <!-- Tabs for Levels -->
+      <div class="mb-12">
+        <!-- Tab Buttons -->
+        <div class="flex justify-center space-x-4 mb-6">
+          <button 
+            *ngFor="let level of levels; let i = index"
+            (click)="setActiveTab(i)"
+            class="px-4 py-2 rounded-lg font-semibold transition-colors duration-300"
+            [class.bg-blue-600]="activeTab === i"
+            [class.text-white]="activeTab === i"
+            [class.bg-gray-200]="activeTab !== i"
+            [class.text-gray-700]="activeTab !== i"
+            [class.hover:bg-gray-300]="activeTab !== i">
+            {{ level.title.split('–')[0].trim() }}
+          </button>
+        </div>
+  
+        <!-- Tab Content -->
+        <div>
+          <app-level-tab 
+            *ngIf="levels[activeTab]"
+            [level]="levels[activeTab]">
+          </app-level-tab>
+        </div>
+      </div>
+  
+      <!-- Download PDF Button -->
+      <div class="text-center">
+        <a 
+          href="#" 
+          class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300">
+          Download PDF
+        </a>
+      </div>
+    </div>
+  </section>

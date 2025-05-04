@@ -1,0 +1,14 @@
+<div>
+    <!-- Level Title -->
+    <h3 class="text-2xl font-semibold text-center mb-6">
+      {{ level.title }}
+    </h3>
+  
+    <!-- List of Chapters -->
+    <div class="space-y-4">
+      <app-chapter-card 
+        *ngFor="let chapter of level.chapters"
+        [chapter]="chapter">
+      </app-chapter-card>
+    </div>
+  </div>

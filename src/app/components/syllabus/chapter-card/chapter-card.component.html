@@ -1,0 +1,31 @@
+<div class="bg-white rounded-lg shadow-md">
+    <!-- Chapter Header (Clickable to Expand) -->
+    <div 
+      (click)="toggleExpand()"
+      class="p-4 flex justify-between items-center cursor-pointer hover:bg-gray-50 transition-colors duration-200">
+      <h4 class="text-lg font-medium text-gray-800">
+        {{ chapter.title }}
+      </h4>
+      <div class="flex items-center space-x-2">
+        <span class="text-gray-600 text-sm">Pages: {{ chapter.pages }}</span>
+        <svg 
+          class="w-5 h-5 text-gray-600 transition-transform duration-200"
+          [class.rotate-180]="isExpanded"
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24" 
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </div>
+    </div>
+  
+    <!-- Chapter Details (Expandable) -->
+    <div 
+      *ngIf="isExpanded"
+      class="p-4 border-t border-gray-200">
+      <p class="text-gray-700 mb-2"><span class="font-medium">Objective:</span> {{ chapter.objective }}</p>
+      <p class="text-gray-700 mb-2"><span class="font-medium">Project:</span> {{ chapter.project }}</p>
+      <p class="text-gray-700"><span class="font-medium">Concepts:</span> {{ chapter.concepts }}</p>
+    </div>
+  </div>

@@ -1,0 +1,34 @@
+<section class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <!-- Section Title -->
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">
+        Our Modular Design: Learn, Expand, Reuse
+      </h2>
+  
+      <!-- Overview Paragraph -->
+      <p class="text-lg text-gray-700 text-center max-w-3xl mx-auto mb-12">
+        Our modular educational boards are designed to grow with you. Start with the Base Board to learn the basics of electronics and programming. As you progress, add the Intermediate, Advanced, and Expert Boards to unlock new components and explore advanced topics like robotics, IoT, and AI—all while reusing your previous boards!
+      </p>
+  
+      <!-- Grid of Board Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <app-board-card 
+          *ngFor="let board of boards" 
+          [board]="board">
+        </app-board-card>
+      </div>
+  
+      <!-- Benefits List -->
+      <div class="text-center">
+        <h3 class="text-2xl font-semibold mb-6">Why Choose Our Modular System?</h3>
+        <ul class="space-y-4">
+          <li *ngFor="let benefit of benefits" class="flex items-center justify-center">
+            <svg class="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-700">{{ benefit }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>

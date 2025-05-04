@@ -1,0 +1,16 @@
+<section class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <!-- Section Title -->
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+        See It in Action: Product Demos
+      </h2>
+  
+      <!-- Grid of Videos -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <app-video-player 
+          *ngFor="let video of videos"
+          [video]="video">
+        </app-video-player>
+      </div>
+    </div>
+  </section>
